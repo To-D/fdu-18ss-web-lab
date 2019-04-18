@@ -16,6 +16,7 @@
    <script src="bootstrap3_defaultTheme/assets/js/html5shiv.js"></script>
    <script src="bootstrap3_defaultTheme/assets/js/respond.min.js"></script>
    <![endif]-->
+
 </head>
 
 <body>
@@ -116,8 +117,8 @@
       <div class="page-header">
          <h2>View Cart</h2>
       </div>
-         
-      <table class="table table-condensed">
+
+      <table class="table table-condensed" id="tb">
          <tr>
             <th>Image</th>
             <th>Product</th>
@@ -126,58 +127,31 @@
             <th>Amount</th>
          </tr>
 
-         <!-- 这是你需要修改的地方 -->
-         <!-- 本来是下面这样👇 -->
-
-         <!-- <tr>
-            <td><img class="img-thumbnail" src="images/art/tiny/116010.jpg" alt="..."></td>
-            <td>Artist Holding a Thistle</td>
-            <td>2</td>
-            <td>$500</td>
-            <td>$1000</td>
-         </tr>
-         <tr>
-            <td><img class="img-thumbnail" src="images/art/tiny/113010.jpg" alt="..."></td>
-            <td>Self-portrait in a Straw Hat</td>
-            <td>1</td>
-            <td>$700</td>
-            <td>$700</td>
-         </tr>  -->
-         
-         <!-- 你需要按照图片上的要求使用javascript来完成 -->
-         <!-- 所需要的数据在这里 -->
-         <!--
-         $file1 = '116010.jpg';
-         $product1 = 'Artist Holding a Thistle';
-         $quantity1 = 2;
-         $price1 = 500;
-
-         $file2 = '113010.jpg';
-         $product2 = 'Self-portrait in a Straw Hat';
-         $quantity2 = 1;
-         $price2 = 700;
-        -->
-
          <tr class="success strong">
             <td colspan="4" class="moveRight">Subtotal</td>
-            <td >$1700</td>
+            <td id="total" ></td>
          </tr>
+
          <tr class="active strong">
             <td colspan="4" class="moveRight">Tax</td>
-            <td>$170</td>
-         </tr>  
+            <td id="tax"></td>
+         </tr>
+
          <tr class="strong">
             <td colspan="4" class="moveRight">Shipping</td>
-            <td>$100</td>
-         </tr> 
+            <td id="shipping"></td>
+         </tr>
+
          <tr class="warning strong text-danger">
             <td colspan="4" class="moveRight">Grand Total</td>
-            <td>$1970</td>
-         </tr>    
+            <td id="finaltotal"></td>
+         </tr>
+
          <tr >
             <td colspan="4" class="moveRight"><button type="button" class="btn btn-primary" >Continue Shopping</button></td>
             <td><button type="button" class="btn btn-success" >Checkout</button></td>
          </tr>
+
       </table>         
 
 </div>  <!-- end container -->
@@ -260,7 +234,57 @@
    </div>
 </footer>
 
+<script>
+    var tb=document.getElementById("tb");
+    //在下面四个数组里添加信息就可以全自动更新页面
+    var $file=['116010.jpg','113010.jpg'];
+    var $product=['Artist Holding a Thistle','Self-portrait in a Straw Hat'];
+    var $quantity=[2,1,];
+    var $price=[500,700];
+    var $amount=[];
+    $amount.length=$file.length;
+    for(i=0;i<$amount.length;i++)
+        $amount[i]=$quantity[i]*$price[i];
+    //根据商品数加行
+    for (i = 0; i < $file.length; i++) {
+        var newrow = tb.insertRow(1);
+        for (j = 0; j < 5; j++)
+            newrow.insertCell(j);
+    }
 
+    //输出一行
+    function writeRow( tr ){
+        tb.rows[tr+1].cells[0].innerHTML='<img class="img-thumbnail" src="images/art/tiny/'+$file[tr]+'" alt="...">';
+        tb.rows[tr+1].cells[1].innerHTML=$product[tr];
+        tb.rows[tr+1].cells[2].innerHTML=$quantity[tr];
+        tb.rows[tr+1].cells[3].innerHTML='$'+$price[tr];
+        tb.rows[tr+1].cells[4].innerHTML='$'+$amount[tr];
+    }
+
+    for(i=0;i<$file.length;i++)
+        writeRow(i);
+
+    var deal=[0,0,0,0];
+    var total=document.getElementById("total");
+    var tax=document.getElementById("tax");
+    var shipping=document.getElementById("shipping");
+    var finaltotal=document.getElementById("finaltotal");
+    var obj=[total,tax,shipping,finaltotal];
+
+    //计算总价
+    for(i=0;i<$file.length;i++)
+        deal[0]+=$amount[i];
+    //计算税款
+    deal[1]=deal[0]*0.1;
+    if(deal[0]<=1000)
+        deal[2]=40;
+    //计算需付款项
+    deal[3]=deal[0]+deal[1]+deal[2];
+
+    for(i=0;i<4;i++)
+        obj[i].innerHTML='$'+deal[i];
+
+</script>
     <!-- Bootstrap core JavaScript
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->
