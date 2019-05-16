@@ -2,8 +2,54 @@
 <head>
 <title>Chapter 10</title>
 <link rel="stylesheet" href="lab7.css">
+<script src="http://code.jquery.com/jquery-3.1.0.min.js">
+</script>
 <script>
-</script>      
+    $(function(){
+        //改变显示图片
+        $("#thumbBox img").on("click",function(){
+            var oldsrc=$(this).attr("src");
+            var newsrc=oldsrc.replace(/small/,"medium");
+            $("#imgManipulated img").attr("src",newsrc);
+
+            var alt=$(this).attr("alt");
+            var title=$(this).attr("title");
+            var figcaption="<em>"+alt+"</em> <br>\n" + title;
+            $("figcaption").html(figcaption);
+        })
+
+        //滤镜
+        $("#sliderOpacity").on("click",function(){
+            $("#imgManipulated img").css("-webkit-filter",
+                "opacity("+$(this).val()+"%) ");
+        });
+        $("#sliderSaturation").on("click",function(){
+            $("#imgManipulated img").css("-webkit-filter",
+                "saturate("+$(this).val()+"%) ");
+        });
+        $("#sliderBrightness").on("click",function(){
+            $("#imgManipulated img").css("-webkit-filter",
+                "brightness("+$(this).val()+"%) ");
+        });
+        $("#sliderHue").on("click",function(){
+            $("#imgManipulated img").css("-webkit-filter",
+                "hue-rotate("+$(this).val()+"deg) ");
+        });
+        $("#sliderGray").on("click",function(){
+            $("#imgManipulated img").css("-webkit-filter",
+                "grayscale("+$(this).val()+"%) ");
+        });
+        $("#sliderBlur").on("click",function(){
+            $("#imgManipulated img").css("-webkit-filter",
+                "blur("+$(this).val()+"px) ");
+        });
+
+        //重置滤镜
+        $("#resetFilters").on("click",function(){
+            $("#sliderBox input").css("-webkit-filter","none");
+        })
+    });
+</script>
 </head>    
 <body class="tiled">
 <header>
@@ -36,8 +82,6 @@
         <div><img src="images/small/painting5.jpg"  alt="Milkmaid" title="Johannes Vermeer, c. 1660"/></div>
     </div>
 </main>
-<script>
 
-</script>    
 </body>   
 </html>
