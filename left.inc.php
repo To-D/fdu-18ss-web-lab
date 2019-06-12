@@ -1,35 +1,30 @@
-  <div class="mdl-layout__drawer mdl-color--blue-grey-800 mdl-color-text--blue-grey-50">
-       <div class="profile">
-           <img src="images/profile.jpg" class="avatar">
-           <h4>John Locke</h4>           
-           <span>johnlocke@example.com</span>
-       </div>
+            <aside class="col-md-2">
+                <div class="panel panel-info">
+                    <div class="panel-heading">Continents</div>
+                    <ul class="list-group">
+                        <li class="list-group-item"><a href="#">Africa</a></li>
+                        <li class="list-group-item"><a href="#">Asia</a></li>
+                        <li class="list-group-item"><a href="#">Europe</a></li>
+                        <li class="list-group-item"><a href="#">North America</a></li>
+                        <li class="list-group-item"><a href="#">South America</a></li>
+                    </ul>
+                </div>
+                <!-- end continents panel -->
 
-    <nav class="mdl-navigation mdl-color-text--blue-grey-300">
-        <a class="mdl-navigation__link mdl-color-text--blue-grey-300" href=""><i class="material-icons" role="presentation">dashboard</i> Dashboard</a>
-        <a class="mdl-navigation__link mdl-color-text--blue-grey-300" href=""><i class="material-icons" role="presentation">message</i> Messages</a>
-        <a class="mdl-navigation__link mdl-color-text--blue-grey-300" href=""><i class="material-icons" role="presentation">event</i> Tasks</a>
-        <a class="mdl-navigation__link mdl-color-text--blue-grey-300" href=""><i class="material-icons" role="presentation">call</i> Orders</a>
-        <a class="mdl-navigation__link mdl-color-text--blue-grey-300" href=""><i class="material-icons" role="presentation">settings</i> Configure</a>
-        <a class="mdl-navigation__link mdl-color-text--blue-grey-300" href=""><i class="material-icons" role="presentation">view_list</i> Catalog</a>
-        <a class="mdl-navigation__link mdl-color-text--blue-grey-300" href=""><i class="material-icons" role="presentation">contacts</i> Customers</a>
-        <a class="mdl-navigation__link mdl-color-text--blue-grey-300" href=""><i class="material-icons" role="presentation">insert_chart</i> Analytics</a>                              
-    </nav>
-  </div>  <div class="mdl-layout__drawer mdl-color--blue-grey-800 mdl-color-text--blue-grey-50">
-       <div class="profile">
-           <img src="images/profile.jpg" class="avatar">
-           <h4>John Locke</h4>           
-           <span>johnlocke@example.com</span>
-       </div>
-
-    <nav class="mdl-navigation mdl-color-text--blue-grey-300">
-        <a class="mdl-navigation__link mdl-color-text--blue-grey-300" href=""><i class="material-icons" role="presentation">dashboard</i> Dashboard</a>
-        <a class="mdl-navigation__link mdl-color-text--blue-grey-300" href=""><i class="material-icons" role="presentation">message</i> Messages</a>
-        <a class="mdl-navigation__link mdl-color-text--blue-grey-300" href=""><i class="material-icons" role="presentation">event</i> Tasks</a>
-        <a class="mdl-navigation__link mdl-color-text--blue-grey-300" href=""><i class="material-icons" role="presentation">call</i> Orders</a>
-        <a class="mdl-navigation__link mdl-color-text--blue-grey-300" href=""><i class="material-icons" role="presentation">settings</i> Configure</a>
-        <a class="mdl-navigation__link mdl-color-text--blue-grey-300" href=""><i class="material-icons" role="presentation">view_list</i> Catalog</a>
-        <a class="mdl-navigation__link mdl-color-text--blue-grey-300" href=""><i class="material-icons" role="presentation">contacts</i> Customers</a>
-        <a class="mdl-navigation__link mdl-color-text--blue-grey-300" href=""><i class="material-icons" role="presentation">insert_chart</i> Analytics</a>                              
-    </nav>
-  </div>
+                <div class="panel panel-info">
+                    <div class="panel-heading">Popular</div>
+                    <ul class="list-group">
+                        <li class="list-group-item"><a href="#">Canada</a></li>
+                        <li class="list-group-item"><a href="#">France</a></li>
+                        <li class="list-group-item"><a href="#">Italy</a></li>
+                        <li class="list-group-item"><a href="#">Germany</a></li>
+                        <li class="list-group-item"><a href="#">Ghana</a></li>
+                        <li class="list-group-item"><a href="#">Greece</a></li>
+                        <li class="list-group-item"><a href="#">Hungary</a></li>
+                        <li class="list-group-item"><a href="#">Spain</a></li>
+                        <li class="list-group-item"><a href="#">United States</a></li>
+                        <li class="list-group-item"><a href="#">United Kingdom</a></li>
+                    </ul>
+                </div>
+                <!-- end continents panel -->
+            </aside>

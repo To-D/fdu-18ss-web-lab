@@ -30,6 +30,7 @@
 		padding: 0px;
 		float: left;
 		z-index: 4;
+		width:220px !important;
 	}
 
 
@@ -66,3 +67,4 @@
 		text-align: center;
 		top:20px;
 	}
+
